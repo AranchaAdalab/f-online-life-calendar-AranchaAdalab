@@ -18,6 +18,17 @@ class App extends React.Component {
     this.getMessage = this.getMessage.bind(this);
     this.getFace = this.getFace.bind(this);
     this.getReset = this.getReset.bind(this);
+    this.saveInformation = this.saveInformation.bind(this);
+  }
+
+  componentDidMount() {
+    const savedInformation = JSON.parse(localStorage.getItem("calendarArr"));
+    const savedCalendar = savedInformation ? savedInformation : [];
+    this.setState({ calendar: savedCalendar });
+  }
+
+  componentDidUpdate() {
+    this.saveInformation()
   }
 
   getDate(event) {
@@ -52,19 +63,32 @@ class App extends React.Component {
     }));
   }
 
+  saveInformation() {
+    localStorage.setItem('calendarArr', JSON.stringify(this.state.calendar));
+  }
+
   getReset() {
     this.setState({
       newDate: "",
       newMood: "",
       newMessage: ""
-    })
+    });
   }
 
   render() {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={() => <Home getReset={this.getReset} getCalendar={this.state.calendar}/>} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Home
+                getReset={this.getReset}
+                getCalendar={this.state.calendar}
+              />
+            )}
+          />
           <Route
             path="/editor"
             render={() => (

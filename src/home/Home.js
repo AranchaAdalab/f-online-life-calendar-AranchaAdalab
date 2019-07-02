@@ -16,7 +16,7 @@ class Home extends React.Component {
           {getCalendar.map((item, index) => {
             if (item.mood === "happy") {
               return (
-                <li>
+                <li key={index}>
                   <div className="face__container">
                     <div className="smile">:)</div>
                     <div className="date__container">{item.date}</div>
@@ -26,7 +26,7 @@ class Home extends React.Component {
               );
             } else {
               return (
-                <li>
+                <li key={index}>
                   <div className="face__container">
                     <div className="no__smile">:(</div>
                     <div className="date__container">{item.date}</div>
