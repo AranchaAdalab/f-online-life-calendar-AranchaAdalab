@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Mood Calendar
 
-## Available Scripts
+La app es el resultado de la tercera prueba técnica del bloque de formación online de Adalab. Consiste en un calendario que irá formándose en función de añadir el ánimo del día seleccionado. Si la opción seleccionada es "feliz", el ususario además podrá agregar un mensaje con una pequeña explicación de por qué hoy se siente bien. Todos los resultados se irán almacenando en LocalStorage, lo que permitirá conservar el calendario aunque se cierre o actualice la página. 
 
-In the project directory, you can run:
+### `Herramientas`
 
-### `npm start`
+La aplicación se ha creado con HTML, SASS, JAVASCRIPT y REACT. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Planteamiento del ejercicio`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+La app consta de dos páginas. A través del "+" ubicado en la primera de ellas, considerada la home (el calendario), se puede acceder a la segunda. Esta es un editor en el que se puede seleccionar la fecha, el estado de ánimo y el mensaje si la elección ha sido "feliz". Una vez se ha terminado, hay dos opciones: guardar o cancelar. En cualquier caso, se vuelve a la home. Si la opción ha sido "guardar", en el calendario aparecerá el resultado de los datos introducidos. Si la opción ha sido "cancelar", se mostrará el calendario tal y como estaba.
 
-### `npm test`
+### `Estructura por componentes`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+src
 
-### `npm run build`
+___app
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-------------App.js
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+-------------App.scss
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+___editor
 
-### `npm run eject`
+-------------Editor.js
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-------------Editor.scss
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+___home
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-------------Home.js
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-------------Home.scss
 
-## Learn More
+___Index.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+___Index.scss
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Si quieres disfrutar de la aplicación o mejorarla puedes clonar el respositorio con el siguiente enlace
+https://github.com/Adalab/f-online-pokemon-AranchaAdalab.git
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Nota: no olvides ejecutar npm install**
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+¡Gracias!

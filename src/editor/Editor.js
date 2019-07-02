@@ -7,14 +7,24 @@ class Editor extends React.Component {
     const { getDate, getMood, getMessage, mood, getFace } = this.props;
     return (
       <div className="editor__container">
+        <h1 className="title">¿Cómo te sientes hoy?</h1>
         <form action="/signup" method="post">
-          <div className="date">
-            <label htmlFor="date">Fecha</label>
-            <input placeholder="01/07/2019" id="date" type="date" name="date" onChange={getDate}/>
+          <div className="date__container">
+            <label className="date__label" htmlFor="date">
+              Fecha
+            </label>
+            <input
+              className="date__input"
+              placeholder="01/07/2019"
+              id="date"
+              type="date"
+              name="date"
+              onChange={getDate}
+            />
           </div>
           <div className="state__container">
-            <h2>Estado</h2>
-            <label htmlFor="happy">
+            <h2 className="state__label">Estado</h2>
+            <label className="happy__label" htmlFor="happy">
               <input
                 id="happy"
                 type="radio"
@@ -24,7 +34,7 @@ class Editor extends React.Component {
               />
               :)
             </label>
-            <label htmlFor="sad">
+            <label className="sad__label" htmlFor="sad">
               <input
                 id="sad"
                 type="radio"
@@ -35,9 +45,16 @@ class Editor extends React.Component {
               :(
             </label>
           </div>
-          <div className={`reason__container ${mood === 'sad' || mood === '' ? 'hidden' : ''}`}>
-            <label htmlFor="reason">Mensaje</label>
+          <div
+            className={`reason__container ${
+              mood === "sad" || mood === "" ? "hidden" : ""
+            }`}
+          >
+            <label className="reason__label" htmlFor="reason">
+              Mensaje
+            </label>
             <input
+              className="reason__input"
               placeholder="¿Por qué es un buen día?"
               id="reason"
               type="text"
@@ -46,10 +63,15 @@ class Editor extends React.Component {
             />
           </div>
           <Link to={"/"}>
-            <input type="submit" value="Guardar" onClick={getFace} />
+            <input
+              className="save__input"
+              type="submit"
+              value="Guardar"
+              onClick={getFace}
+            />
           </Link>
           <Link to={"/"}>
-            <button>Cancelar</button>
+            <button className="cancel__input">Cancelar</button>
           </Link>
         </form>
       </div>

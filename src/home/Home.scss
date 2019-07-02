@@ -4,19 +4,26 @@
     justify-content: center;
     align-items: center;
     padding-top: 10px;
+    width: 100vw;
 }
 
 .button__home {
-    background-color: rgb(13, 108, 233);
+    background-color: rgb(233, 13, 134);
     color: blanchedalmond;
     height: 30px;
-    width: 320px;
+    min-width: 320px;
+    width: 100vw;
+    font-size: 20px;
 }
 
 .faces {
     list-style: none;
     padding: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
 }
 
 .smile {
@@ -35,7 +42,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgb(233, 101, 13);
+    background-color: rgb(14, 145, 221);
     color: blanchedalmond;
     font-size: 22px;
     font-weight: 600;
@@ -45,9 +52,11 @@
 }
 
 .face__container {
+    grid-column: span 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 15px;
+    margin: 10px;
+    width: 150px;
 }

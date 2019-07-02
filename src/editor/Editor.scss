@@ -1,3 +1,57 @@
 .hidden {
     visibility: hidden;
 }
+
+.title {
+    color: pink;
+}
+
+.editor__container {
+    margin-top: 15px;
+}
+
+.date__label, .state__label, .reason__label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    margin-right: 9px;
+    font-weight: 400;
+}
+
+.happy__label, .sad__label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    margin-right: 19px;
+    font-weight: 600;
+}
+
+.date__input, .reason__input {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    width: 200px;
+}
+
+.reason__container {
+    margin: 17px;
+}
+
+.save__input {
+    height: 30px;
+    width: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+    margin-right: 9px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: pink;
+}
+
+.cancel__input {
+    height: 30px;
+    width: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+    margin-right: 9px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
