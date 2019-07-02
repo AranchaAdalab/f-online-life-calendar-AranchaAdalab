@@ -29,7 +29,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 9px;
 }
 
 .no__smile {
@@ -43,5 +42,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 9px;
+}
+
+.face__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
 }

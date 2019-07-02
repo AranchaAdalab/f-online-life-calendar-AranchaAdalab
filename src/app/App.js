@@ -8,16 +8,55 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mood: ''
-    }
-    this.getHappy = this.getHappy.bind(this);
+      calendar: [],
+      newDate: "",
+      newMood: "",
+      newMessage: ""
+    };
+    this.getDate = this.getDate.bind(this);
+    this.getMood = this.getMood.bind(this);
+    this.getMessage = this.getMessage.bind(this);
+    this.getFace = this.getFace.bind(this);
+    this.getReset = this.getReset.bind(this);
   }
 
-  getHappy(event) {
-    const selectValue = event.currentTarget.value;
-    console.log(selectValue);
-    this.setState ({
-      mood: selectValue
+  getDate(event) {
+    const dateValue = event.currentTarget.value;
+    this.setState({
+      newDate: dateValue
+    });
+  }
+
+  getMood(event) {
+    const moodValue = event.currentTarget.value;
+    this.setState({
+      newMood: moodValue
+    });
+  }
+
+  getMessage(event) {
+    const messageValue = event.currentTarget.value;
+    this.setState({
+      newMessage: messageValue
+    });
+  }
+
+  getFace() {
+    const newFace = {
+      date: this.state.newDate,
+      mood: this.state.newMood,
+      message: this.state.newMessage
+    };
+    this.setState(prevState => ({
+      calendar: [...prevState.calendar, newFace]
+    }));
+  }
+
+  getReset() {
+    this.setState({
+      newDate: "",
+      newMood: "",
+      newMessage: ""
     })
   }
 
@@ -25,8 +64,19 @@ class App extends React.Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={() => <Home />} />
-          <Route path="/editor" render={() => <Editor getHappy={this.getHappy} getMood={this.state.mood}/>} />
+          <Route exact path="/" render={() => <Home getReset={this.getReset} getCalendar={this.state.calendar}/>} />
+          <Route
+            path="/editor"
+            render={() => (
+              <Editor
+                getMood={this.getMood}
+                getDate={this.getDate}
+                getMessage={this.getMessage}
+                mood={this.state.newMood}
+                getFace={this.getFace}
+              />
+            )}
+          />
         </Switch>
       </div>
     );

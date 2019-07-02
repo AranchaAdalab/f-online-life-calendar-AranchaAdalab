@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 class Editor extends React.Component {
   render() {
-    const { getHappy, getMood } = this.props;
+    const { getDate, getMood, getMessage, mood, getFace } = this.props;
     return (
       <div className="editor__container">
         <form action="/signup" method="post">
           <div className="date">
             <label htmlFor="date">Fecha</label>
-            <input placeholder="01/07/2019" id="date" type="date" name="date" />
+            <input placeholder="01/07/2019" id="date" type="date" name="date" onChange={getDate}/>
           </div>
           <div className="state__container">
             <h2>Estado</h2>
@@ -20,7 +20,7 @@ class Editor extends React.Component {
                 type="radio"
                 value="happy"
                 name="state"
-                onChange={getHappy}
+                onChange={getMood}
               />
               :)
             </label>
@@ -30,22 +30,23 @@ class Editor extends React.Component {
                 type="radio"
                 value="sad"
                 name="state"
-                onChange={getHappy}
+                onChange={getMood}
               />
               :(
             </label>
           </div>
-          <div className={`reason__container ${getMood === 'sad' || getMood === '' ? 'hidden' : ''}`}>
+          <div className={`reason__container ${mood === 'sad' || mood === '' ? 'hidden' : ''}`}>
             <label htmlFor="reason">Mensaje</label>
             <input
-              placeholder="¿Por qué es un buen día"
+              placeholder="¿Por qué es un buen día?"
               id="reason"
               type="text"
               name="reason"
+              onChange={getMessage}
             />
           </div>
           <Link to={"/"}>
-            <input type="submit" value="Guardar" />
+            <input type="submit" value="Guardar" onClick={getFace} />
           </Link>
           <Link to={"/"}>
             <button>Cancelar</button>
